@@ -7,8 +7,7 @@ export default function taskBlock(trueOrFalse) {
     const task = true;
     const task2 = false;
   }
-
-    /* eslint-disable no-use-vars */
+  /* eslint-disable no-use-vars */
 
   return [task, task2];
 }
