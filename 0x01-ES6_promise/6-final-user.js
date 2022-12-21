@@ -11,11 +11,11 @@ const handleProfileSignup = async (
     const user = await signUpUser(firstName, lastName);
     result.push({ status: 'fulfilled', value: user });
     await uploadPhoto(fileName);
-  } catch (error) {
-     result.push({
-       status: 'rejected',
-       value: error.toString(),
-     });
+  }catch (error) {
+    result.push({
+      status: 'rejected',
+      value: error.toString(),
+    });
   }
   return result;
 };
