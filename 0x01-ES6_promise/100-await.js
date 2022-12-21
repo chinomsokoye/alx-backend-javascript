@@ -11,9 +11,9 @@ const asyncUploadUser = async () => {
       photo: await uploadPhoto(),
       user: await createUser(),
     };
-      return result;
+    return result;
   } catch (error) {
-      return result;
+    return result;
   }
 };
 
