@@ -1,0 +1,23 @@
+import signUpUser from './4-user-promise.js';
+import uploadPhoto from './5-photo-reject.js';
+
+const handleProfileSignup = async (
+  firstName,
+  lastName,
+  fileName,
+) => {
+  const result = [];
+  try {
+    const user = await signUpUser(firstName, lastName);
+    result.push({ status: 'fufilled', value: user });
+    await uploadPhoto(fileName);
+  }catch (error) {
+    result.push({
+      status: 'rejected',
+      value: error.toString(),
+    });
+  }
+  return result;
+};
+
+export default handleProfileSignup;
