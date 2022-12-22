@@ -1,4 +1,4 @@
-import ClassRoom from './0-classroom.js';
+import ClassRoom from './0-classroom';
 
 const initializeRooms = () => {
   const array = [19, 20, 34];
