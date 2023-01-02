@@ -7,5 +7,4 @@ const queryAPI = (endpoint) => {
   return total;
 };
 
-
 export { weakMap, queryAPI };
