@@ -3,6 +3,6 @@ const groceriesList = () => new Map()
   .set('Tomatoes', 10)
   .set('Pasta', 1)
   .set('Rice', 1)
-  .set('Banana', 5)
+  .set('Banana', 5);
 
 export default groceriesList;
