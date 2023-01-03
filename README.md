@@ -3,8 +3,8 @@ Curriculum <br>
 
 # 0x00. ES6 Basics
 
-```json JavaScript```
-```json ES6```
+```JavaScript```
+```ES6```
 
 Concepts
 
