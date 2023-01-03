@@ -3,7 +3,12 @@ Curriculum <br>
 
 # 0x00. ES6 Basics
 
-`JavaScript` `ES6`
+```JavaScript
+JavaScript
+```
+```JavaScript
+ES6
+```
 
 Concepts
 
@@ -54,7 +59,7 @@ In your project directory:
 <details>
   <summary>Click to show/hide file contents</summary>
 
-  ```
+  ```Json
   {
 	"scripts": {
 	  "lint": "./node_modules/.bin/eslint",
@@ -81,7 +86,7 @@ In your project directory:
 <details>
   <summary>Click to show/hide file contents</summary>
 
-  ```
+  ```Json
   module.exports = {
     presets: [
       [
@@ -102,7 +107,7 @@ Use when you get to tasks requiring `uploadPhoto` and `createUser`.
 <details>
   <summary>Click to show/hide file contents</summary>
 
-  ```
+  ```Json
   export function uploadPhoto() {
     return Promise.resolve({
       status: 200,
@@ -124,7 +129,7 @@ Use when you get to tasks requiring `uploadPhoto` and `createUser`.
 <details>
   <summary>Click to show/hide file contents</summary>
 
-  ```
+  ```Json
   module.exports = {
     env: {
       browser: false,
@@ -171,7 +176,7 @@ Don't forget to run `npm install` when you have the `package.json` file from the
 
 `uploadPhoto` returns a response with format
 
-```
+```Json
 {
   status: 200,
   body: 'photo-profile-1',
@@ -180,7 +185,7 @@ Don't forget to run `npm install` when you have the `package.json` file from the
 
 `createUser` returns a response with format
 
-```
+```Json
 {
   firstName: 'Guillaume',
   lasttName: 'Salve',
