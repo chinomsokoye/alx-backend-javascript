@@ -18,9 +18,10 @@ _For this project, look at these concepts:_
 * Allowed editors: `vi`, `vim`, `emacs`, `Visual Studio Code`
 * Mandatory `README.md` file
 * Code should use the `js` extension
-* Code tested using the [Jest Testing Framework](https://www.jestjs.io)
+* Code tested using the [Jest Testing Framework](https://www.jestjs.io) and command `npm run test`
 * Code analyzed using the linter [ESLint](https://www.eslint.org) along with specific rules provided
 * All functions must be exported
+* All test and lint need be passed and verifed by running `npm run full-test`
 
 ## Setup
 
@@ -54,6 +55,25 @@ In your project directory:
   <summary>Click to show/hide file contents</summary>
 
   ```
+  {
+	"scripts": {
+	  "lint": "./node_modules/.bin/eslint",
+	  "check-lint": "lint [0-9]*.js",
+	  "dev": "npx babel-node",
+	  "test": "jest",
+	  "full-test": "./node_modules/.bin/eslint [0-9]*.js && jest"
+	},
+	"devDependencies": {
+	  "@babel/core": "^7.6.0",
+	  "@babel/node": "^7.8.0",
+	  "@babel/preset-env": "^7.6.0",
+	  "eslint": "^6.4.0",
+	  "eslint-config-airbnb-base": "^14.0.0",
+	  "eslint-plugin-import": "^2.18.2",
+	  "eslint-plugin-jest": "^22.17.0",
+	  "jest": "^24.9.0"
+	}
+  }
   ```
 </details>
 
@@ -62,6 +82,41 @@ In your project directory:
   <summary>Click to show/hide file contents</summary>
 
   ```
+  module.exports = {
+    presets: [
+      [
+	'@babel/preset-env',
+	{
+	   targets: {
+	     node: 'current',
+	   },
+	 },
+      ],
+    ],
+  };
+  ```
+</details>
+
+`utils.js`
+Use when you get to tasks requiring `uploadPhoto` and `createUser`.
+<details>
+  <summary>Click to show/hide file contents</summary>
+
+  ```
+  export function uploadPhoto() {
+    return Promise.resolve({
+      status: 200,
+      body: 'photo-profile-1',
+    });
+  }
+
+
+  export function createUser() {
+    return Promise.resolve({
+      firstName: 'Guillaume',
+      lastName: 'Salva',
+    }),
+  }
   ```
 </details>
 
@@ -70,9 +125,64 @@ In your project directory:
   <summary>Click to show/hide file contents</summary>
 
   ```
+  module.exports = {
+    env: {
+      browser: false,
+      es6: true,
+      jest: true,
+    },
+    extends: [
+      'airbnb-base',
+      'plugin:jest/all',
+    ],
+    globals: {
+      Atomics: 'readonly',
+      SharedArrayBuffer: 'readonly',
+    },
+    parserOptions: {
+      ecmaVersion: 2018,
+      sourceType: 'module',
+    },
+    plugins: ['jest'],
+    rules: {
+      'no-console': 'off',
+      'no-shadow': 'off',
+      'no-restricted-syntax': [
+        'error',
+	'LabeledStatement',
+	'WithStatement',
+      ],
+    },
+    overrides:[
+      {
+        files: ['*.js'],
+	excludedFiles: 'babel.config.js',
+      },
+    ],
+  };
   ```
 </details>
 
 ### Finally...
 
-Don't forget to run `npm install` from the terminal of project folder to install necessary project dependencies.
+Don't forget to run `npm install` when you have the `package.json` file from the terminal of project folder to install necessary project dependencies.
+
+### Response Data Format
+
+`uploadPhoto` returns a response with format
+
+```
+{
+  status: 200,
+  body: 'photo-profile-1',
+}
+```
+
+`createUser` returns a response with format
+
+```
+{
+  firstName: 'Guillaume',
+  lasttName: 'Salve',
+}
+```
