@@ -6,21 +6,21 @@ interface Student{
   }
 
 const student1: Student = {
-      firstName: "Elon",
-      lastName: "Musk",
-      age: 26,
-      location: "Granada",
+      	firstName: "Elon",
+      	lastName: "Musk",
+      	age: 26,
+      	location: "Granada",
 }
 const student2: Student = {
-      firstName: "Alexandria",
-      lastName: "Cortez",
-      age: 28,
-      location: "Haiti",
+      	firstName: "Alexandria",
+      	lastName: "Cortez",
+      	age: 28,
+      	location: "Haiti",
 }
 
 const studentsList: Array<Student> = [student1,student2]
 
-const table: HTMLTTableElement = document.createElement('table');
+const table: HTMLTableElement = document.createElement('table');
 
 document.body.appendChild(table);
 
