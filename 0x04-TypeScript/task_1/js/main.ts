@@ -28,7 +28,7 @@ interface StudentClassInterface {
 	displayName(): string;
 }
 
-const StudentClass: StuudentConstructor = class StudentClass implements StudentClassInterface {
+const StudentClass: StudentConstructor = class StudentClass implements StudentClassInterface {
       	firstName: string;
 	lastName: string;
 
