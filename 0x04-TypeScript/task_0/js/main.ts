@@ -1,8 +1,8 @@
 interface Student{
-	  firstName: string,
-	  lastName: string,
-	  age: number,
-	  location: string,
+	firstName: string,
+	lastName: string,
+	age: number,
+	location: string,
   }
 
 const student1: Student = {
@@ -39,5 +39,4 @@ for (let i: number = 0; i < studentsList.length; i++) {
     row.appendChild(th2);
 
     tbody.appendChild(row);
-
 }
