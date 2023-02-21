@@ -1,12 +1,12 @@
 const fs = require('fs');
 
-function countStudents(path) {
+function countStudents(database) {
   let students = [];
   const StudentGroup = {};
   const studentObject = [];
 
   try {
-    students = fs.readFileSync(path, 'utf8');
+    students = fs.readFileSync(database);
   } catch (error) {
     throw new Error('Cannot load the database');
   }
