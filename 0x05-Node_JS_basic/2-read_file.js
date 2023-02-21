@@ -6,7 +6,7 @@ function countStudents(database) {
   const studentObject = [];
 
   try {
-    students = fs.readFileSync(database);
+    students = fs.readFileSync(database, 'utf-8');
   } catch (error) {
     throw new Error('Cannot load the database');
   }
