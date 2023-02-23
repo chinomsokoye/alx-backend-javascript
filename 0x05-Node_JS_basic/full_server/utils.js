@@ -1,11 +1,11 @@
 const fs = require('fs');
 
-function readDatabase(path) {
+function readDatabase (path) {
   return new Promise((resolve, reject) => {
     fs.readFile(path, 'utf8', (err, data) => {
       if (err) {
         reject(Error(err));
-	return;
+        return;
       }
       const content = data.toString().split('\n');
 
@@ -16,10 +16,10 @@ function readDatabase(path) {
       const fields = {};
       for (const i in students) {
         if (i !== 0) {
-	  if (!fields[students[i][3]]) fields[students[i][3]] = [];
+          if (!fields[students[i][3]]) fields[students[i][3]] = [];
 
-	  fields[students[i][3]].push(students[i][0]);
-	}
+          fields[students[i][3]].push(students[i][0]);
+        }
       }
 
       delete fields.field;
