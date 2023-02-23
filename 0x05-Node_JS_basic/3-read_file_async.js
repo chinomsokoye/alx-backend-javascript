@@ -5,7 +5,7 @@ function countStudents(path) {
     fs.readFile(path, 'utf8', (err, data) => {
       if (err) {
         reject(Error('Cannot load the database'));
-	return;
+        return;
       }
       const response = [];
       let msg;
@@ -27,7 +27,7 @@ function countStudents(path) {
         if (i !== 0) {
           if (!fields[students[i][3]]) fields[students[i][3]] = [];
 
-	  fields[students[i][3]].push(students[i][0]);
+          fields[students[i][3]].push(students[i][0]);
 	}
       }
 
@@ -38,9 +38,9 @@ function countStudents(path) {
           fields[key].length
         }. List: ${fields[key].join(', ')}`;
 
-	console.log(msg);
+        console.log(msg);
 
-	response.push(msg);
+        response.push(msg);
       }
       resolve(response);
     });
